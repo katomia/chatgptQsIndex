@@ -1,0 +1,62 @@
+/* 防止与页面原有样式冲突 */
+.chatgpt-sidebar-container {
+    all: initial;
+}
+
+.chatgpt-sidebar-container * {
+    all: unset;
+}
+
+/* 侧边栏动画效果 */
+.sidebar {
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.sidebar.show {
+    transform: translateX(0);
+}
+
+/* 滚动条样式 - 星空主题 */
+.sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: rgba(15, 12, 41, 0.5);
+    border-radius: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #8b5cf6, #3b82f6);
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(139, 92, 246, 0.5);
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #a78bfa, #60a5fa);
+}
+
+/* 星星动画 */
+@keyframes twinkle {
+    0%, 100% { 
+        opacity: 0.2; 
+        transform: scale(0.8);
+    }
+    50% { 
+        opacity: 0.8; 
+        transform: scale(1.2);
+    }
+}
+
+/* 响应式调整 */
+@media (max-height: 600px) {
+    .sidebar {
+        padding-top: 10px;
+    }
+    
+    .question-item {
+        padding: 10px 12px;
+        margin-bottom: 8px;
+    }
+}

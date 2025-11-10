@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "ChatGPT Sidebar Navigator",
+  "version": "1.0",
+  "description": "在ChatGPT页面右侧显示问题导航侧边栏",
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["https://chatgpt.com/*"],
+      "js": ["content.js"],
+      "css": ["sidebar.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["sidebar.html"],
+      "matches": ["https://chatgpt.com/*"]
+    }
+  ],
+  "icons": {
+    "48": "icon.png"
+  }
+}
